@@ -14,9 +14,12 @@ export function get(req, res) {
 		'Content-Type': 'application/json'
 	});
 	let pageNum = req.query.page
+	console.log(pageNum)
 
-	hasNext = pageNum == pages ? !hasNext : hasNext
-
+	if (pageNum == pages) {
+		hasNext =false
+	}
+	else hasNext = true
 	console.log({ hasNext })
 	res.end(JSON.stringify({ contents, hasNext }));
 }
