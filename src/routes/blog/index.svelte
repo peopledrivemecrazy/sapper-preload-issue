@@ -3,7 +3,7 @@
 		return this.fetch(`blog.json?page=${query.page}`)
 			.then((r) => r.json())
 			.then((pageData) => {
-				return { pageData, currentpage: query.page };
+				return { pageData, currentpage: query.page || 1 };
 			});
 	}
 </script>
@@ -12,7 +12,7 @@
 	export let pageData;
 	export let currentpage;
 	let hasNext = pageData.hasNext;
-	// console.log(pageData.contents)
+	console.log(currentpage)
 </script>
 
 <style>
