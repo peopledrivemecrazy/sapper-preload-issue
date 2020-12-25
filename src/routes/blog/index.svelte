@@ -1,5 +1,7 @@
 <script context="module">
 	export function preload({ query }) {
+		console.log('did I execute?')
+
 		return this.fetch(`blog.json?page=${query.page}`)
 			.then((r) => r.json())
 			.then((pageData) => {
