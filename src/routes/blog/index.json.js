@@ -16,8 +16,8 @@ export function get(req, res) {
 	let pageNum = req.query.page
 	console.log(pageNum)
 
-	if (pageNum == pages) {
-		hasNext =false
+	if (pageNum == pages || pageNum > pages) {
+		hasNext = false
 	}
 	else hasNext = true
 	console.log({ hasNext })
